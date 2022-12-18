@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFileChooser;
@@ -284,9 +283,9 @@ public class Controller implements ActionListener, ListSelectionListener {
     }
 
     private void createLineOK() {
-        String item = lineDialog.getItemNameField().getText();
-        String countStr = lineDialog.getItemCountField().getText();
-        String priceStr = lineDialog.getItemPriceField().getText();
+        String item = lineDialog.getnameField().getText();
+        String countStr = lineDialog.getCountField().getText();
+        String priceStr = lineDialog.getPriceField().getText();
         int count = Integer.parseInt(countStr);
         double price = Double.parseDouble(priceStr);
         int selectedInvoice = frame.getInvoiceTable().getSelectedRow();

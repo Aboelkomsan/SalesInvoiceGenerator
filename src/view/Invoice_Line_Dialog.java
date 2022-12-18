@@ -15,51 +15,50 @@ import javax.swing.JTextField;
  * @author taker
  */
 public class Invoice_Line_Dialog  extends JDialog{
-     private JLabel itemNameLbl;
-     private JTextField itemNameField;
-     private JTextField itemCountField;
-     private JTextField itemPriceField;
-     private JLabel itemCountLbl;
-     private JLabel itemPriceLbl;
-     private JButton okBtn;
-     private JButton cancelBtn;
+     private JLabel nameLabel;
+     private JTextField nameField;
+     private JTextField countField;
+     private JTextField priceField;
+     private JLabel countLabel;
+     private JLabel priceLabel;
+     private JButton okayButton;
+     private JButton cancelButton;
         
      public Invoice_Line_Dialog(SalesFrame frame) {
-        itemNameField = new JTextField(20);
-        itemNameLbl = new JLabel("Item Name");
-        itemCountField = new JTextField(20);
-        itemCountLbl = new JLabel("Item Count");    
-        itemPriceField = new JTextField(20);
-        itemPriceLbl = new JLabel("Item Price");
-        okBtn = new JButton("OK");
-        cancelBtn = new JButton("Cancel");
-        okBtn.setActionCommand("createLineOK");
-        cancelBtn.setActionCommand("createLineCancel");
-        okBtn.addActionListener(frame.getController());
-        cancelBtn.addActionListener(frame.getController());
-        setLayout(new GridLayout(4, 2));
-        
-        add(itemNameLbl);
-        add(itemNameField);
-        add(itemCountLbl);
-        add(itemCountField);
-        add(itemPriceLbl);
-        add(itemPriceField);
-        add(okBtn);
-        add(cancelBtn);
-        
+        nameField = new JTextField(25);
+        nameLabel = new JLabel("Item Name");
+         add(nameLabel);
+         add(nameField);
+        countField = new JTextField(25);
+        countLabel = new JLabel("Item Count");
+         add(countLabel);
+         add(countField);
+        priceField = new JTextField(25);
+        priceLabel = new JLabel("Item Price");
+         add(priceLabel);
+         add(priceField);
+        okayButton = new JButton("OK");
+        cancelButton = new JButton("Cancel");
+         add(okayButton);
+         add(cancelButton);
+        okayButton.setActionCommand("createLineOK");
+        cancelButton.setActionCommand("createLineCancel");
+
+        okayButton.addActionListener(frame.getController());
+        cancelButton.addActionListener(frame.getController());
+        setLayout(new GridLayout(6, 3));
         pack();
     }
-    public JTextField getItemNameField() {
-        return itemNameField;
+    public JTextField getnameField() {
+        return nameField;
     }
-        
-     public JTextField getItemCountField() {
-        return itemCountField;
+
+     public JTextField getCountField() {
+        return countField;
     }
          
-     public JTextField getItemPriceField() {
-        return itemPriceField;
+     public JTextField getPriceField() {
+        return priceField;
     }
     
 }
